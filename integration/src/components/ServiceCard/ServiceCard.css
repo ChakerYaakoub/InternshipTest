@@ -1,0 +1,133 @@
+.card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 380px;
+  font-family: var(--font-family);
+}
+
+.badge {
+  background: #eef1ff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  color: #4f46e5;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.description {
+  color: #6b7280;
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats {
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-5);
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gray-500);
+  font-size: var(--font-size-sm);
+}
+
+.progress svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gray-400);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gray-500);
+  font-size: var(--font-size-md);
+}
+
+.stat .icon {
+  color: var(--color-gray-800);
+}
+
+.divider {
+  border-left: 1px solid var(--color-gray-200);
+  height: 16px;
+}
+
+.collaborators {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatars {
+  display: flex;
+  margin-right: 0;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  margin-left: -4px;
+  object-fit: cover;
+}
+
+.btn-invite {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  -webkit-border-radius: var(--radius-xl);
+  -moz-border-radius: var(--radius-xl);
+  -ms-border-radius: var(--radius-xl);
+  -o-border-radius: var(--radius-xl);
+}
+
+.btn-invite:hover {
+  background: var(--color-primary-dark);
+}
+
+.services-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
