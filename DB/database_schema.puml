@@ -1,0 +1,68 @@
+@startuml Database Schema
+
+!define table(x) class x << (T,#FFAAAA) >>
+!define primary_key(x) <u>x</u>
+!define foreign_key(x) <i>x</i>
+
+hide methods
+hide stereotypes
+
+table(companies) {
+    primary_key(id): INTEGER
+    name: VARCHAR(255)
+    created_at: TIMESTAMP
+}
+
+table(users) {
+    primary_key(id): INTEGER
+    foreign_key(company_id): INTEGER
+    email: VARCHAR(255)
+    name: VARCHAR(255)
+    created_at: TIMESTAMP
+}
+
+table(tasks) {
+    primary_key(id): INTEGER
+    foreign_key(creator_id): INTEGER
+    title: VARCHAR(255)
+    description: TEXT
+    created_at: TIMESTAMP
+    deadline: TIMESTAMP
+    completed_at: TIMESTAMP
+    status: VARCHAR(50)
+}
+
+table(task_assignments) {
+    primary_key(id): INTEGER
+    foreign_key(task_id): INTEGER
+    foreign_key(user_id): INTEGER
+    role: VARCHAR(50)
+    created_at: TIMESTAMP
+}
+
+table(comments) {
+    primary_key(id): INTEGER
+    foreign_key(task_id): INTEGER
+    foreign_key(user_id): INTEGER
+    content: TEXT
+    created_at: TIMESTAMP
+}
+
+table(related_tasks) {
+    primary_key(id): INTEGER
+    foreign_key(task_id): INTEGER
+    foreign_key(related_task_id): INTEGER
+    created_at: TIMESTAMP
+}
+
+' Relationships
+companies "1" -- "*" users : has >
+users "1" -- "*" tasks : creates >
+users "1" -- "*" comments : writes >
+tasks "1" -- "*" comments : has >
+tasks "1" -- "*" task_assignments : has >
+users "1" -- "*" task_assignments : assigned to >
+tasks "1" -- "*" related_tasks : references >
+tasks "1" -- "*" related_tasks : referenced by >
+
+@enduml 

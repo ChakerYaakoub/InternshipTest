@@ -1,0 +1,11 @@
+# Node dependencies
+node_modules/
+node_modules/*
+
+# Optional: also ignore package-lock.json if you want
+# package-lock.json
+
+# Optional: npm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log* 
