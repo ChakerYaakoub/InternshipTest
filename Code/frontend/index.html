@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tennis Match Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tennis Match Simulator</h1>
+
+        <form id="playerForm">
+            <div>
+                <label>Player 1 Name: <input type="text" id="player1Name" required></label>
+                <label>Level (1-10): <input type="number" id="player1Level" min="1" default="1" max="10"
+                        required></label>
+            </div>
+            <div>
+                <label>Player 2 Name: <input type="text" id="player2Name" required></label>
+                <label>Level (1-10): <input type="number" id="player2Level" min="1" default="1" max="10"
+                        required></label>
+            </div>
+            <button type="button" onclick="generatePoints()">Generate Points</button>
+        </form>
+
+        <div id="pointsList"></div>
+        <button id="simulateButton" style="display: none" onclick="simulateMatch()">Simulate Match</button>
+
+        <div id="matchResult"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
